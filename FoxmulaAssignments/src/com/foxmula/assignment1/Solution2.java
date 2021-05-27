@@ -120,6 +120,10 @@ public class Solution2
 					ob2.checkEmpty();
 					check(ob1,ob2);
 					break;
+					
+				default:
+					System.out.println("Wrong Input");
+					break;
 			}
 			
 			System.out.println("If you wish to continue press 0");
