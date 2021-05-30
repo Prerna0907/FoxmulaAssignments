@@ -2,65 +2,6 @@ package com.foxmula.assignment1;
 
 import java.util.Scanner;
 
-class Stack
-{
-	private class Node 
-	{
-	    int element;
-	    Node link;
-    }
-	
-	int size = -1;
-	Node top;
-
-	Stack()
-	{
-		this.top = null;
-	}
-
-	public void push(int x) 
-	{
-		Node temp = new Node();
-		
-	    temp.element = x;
-	    temp.link = top;
-	    top = temp;
-	    size = size + 1;
-	    System.out.println("push() successful");
-	}
-
-	public boolean checkEmpty()
-	{
-		if(size == -1)
-			return true;
-		
-		else
-			return false;
-	}
-
-	public void pop()
-	{
-		if (size == -1) 
-		{
-			System.out.println("Stack Underflow");
-		}
-		
-		else
-		{
-			top = (top).link;
-			System.out.println("pop() successful");
-		}
-	}
-	
-	public int count()
-	{
-		if (size == -1)
-			return 0;
-		else
-			return (size+1);
-	}
-}
-
 public class Solution2 
 {
 	static void check (Stack s1, Stack s2)
@@ -74,7 +15,7 @@ public class Solution2
 	public static void main (String args[])
 	{
 		Scanner sc = new Scanner (System.in);
-		int x,y,choice,element,ch;
+		int choice,element,ch;
 		
 		Stack ob1 = new Stack( );
 		Stack ob2 = new Stack( );
