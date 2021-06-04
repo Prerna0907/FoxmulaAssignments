@@ -2,30 +2,28 @@ package com.foxmula.assignment2;
 
 import java.util.*;
 
-public class Solution2
-{	
-	private static void searchHashSet (int size)
+public class checkArrayList 
+{
+	private static void searchArrayList (int size)
 	{
 		int element;
-		HashSet <Integer> set = new HashSet <Integer> (size);
+		ArrayList <Integer> arr = new ArrayList <Integer> (size);
 		Scanner scan = new Scanner (System.in);
 		
-		System.out.println("Enter the elements of HashSet");
+		System.out.println("Enter the elements of ArrayList");
 		for (int i = 0; i < size ; i++)
 		{
 			element = scan.nextInt();
-			set.add(element);
+			arr.add(element);
 		}
-		
-		System.out.println(set);
 		
 		System.out.println("Enter the element that you wish to search for");
 		element = scan.nextInt();
 		
-		if(set.contains(element))
-			System.out.println (element + " exists in the HashSet!");
+		if(arr.contains(element))
+			System.out.println (element + " exists in the ArrayList!");
 		else
-			System.out.println (element + " does not exist in the HashSet!");
+			System.out.println (element + " does not exist in the ArrayList!");
 			
 		scan.close();
 	}
@@ -34,10 +32,10 @@ public class Solution2
 		int size;
 		Scanner scan = new Scanner (System.in);
 		
-		System.out.println("Enter the size of the HashSet");
+		System.out.println("Enter the size of the ArrayList");
 		size = scan.nextInt();
 		
-		searchHashSet (size);
+		searchArrayList (size);
 		scan.close();
 	}
 }

@@ -2,8 +2,29 @@ package com.foxmula.assignment2;
 
 import java.util.*;
 
-public class Solution3 extends traversingHashSet
+public class Solution3 
 {
+	private static void usingIterator (HashSet<Integer> h)
+	{
+		System.out.println ("Traversal of HashSet Using Iterator ()");
+		
+		Iterator <Integer> itr = h.iterator ();
+		while (itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+	}
+	
+	private static void usingForLoop (HashSet<Integer> h)
+	{ 
+		System.out.println ("Traversal of HashSet using For Loop");
+		
+		for (Integer element : h)
+		{
+			System.out.println (element);
+		}
+	}
+	
 	public static void main (String args [])
 	{
 		int size, element;
