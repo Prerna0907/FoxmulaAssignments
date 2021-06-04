@@ -60,6 +60,7 @@ public class checkPrimeOdd
 		System.out.println ("Enter the number:");
 		num = scanner.nextInt();
 		
+		
 		try
 		{
 			checkException (num);
