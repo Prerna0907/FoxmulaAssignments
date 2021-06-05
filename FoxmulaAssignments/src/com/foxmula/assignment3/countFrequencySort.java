@@ -4,40 +4,28 @@ import java.util.*;
 
 public class countFrequencySort 
 {
-	static void swap(int[] arr, int i, int j)
-	{
-	    int temp = arr[i];
-	    arr[i] = arr[j];
-	    arr[j] = temp;
-	}
-	
-	static int partition(int[] arr1, int [ ] arr2,  int low, int high)
-	{
-	    int pivot = arr1[high];
-	    int i = (low - 1);
-	 
-	    for(int j = low; j <= high - 1; j++)
-	    {
-	        if (arr1[j] < pivot)
-	        {
-	            i++;
-	            swap(arr1, i, j);
-	            swap(arr2, i, j);
-	        }
-	    }
-	    swap(arr1, i + 1, high);
-	    swap(arr2, i + 1, high);
-	    return (i + 1);
-	}
-	static void quickSort(int[] arr1, int[] arr2, int low, int high)
-	{
-	    if (low < high)
-	    {
-	        int pi = partition(arr1, arr2, low, high);
-	        quickSort(arr1, arr2, low, pi - 1);
-	        quickSort(arr1, arr2, pi + 1, high);
-	    }
-	}
+	public static HashMap<Integer, Integer> sortByValue (HashMap<Integer, Integer> hm)
+    {
+       List<Map.Entry<Integer, Integer> > list = new LinkedList<Map.Entry<Integer, Integer> >(hm.entrySet());
+ 
+        Collections.sort
+        (
+        list, new Comparator<Map.Entry<Integer, Integer> >() 
+        {
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2)
+            {
+                return (o1.getValue()).compareTo(o2.getValue());
+            }
+        });
+         
+        HashMap<Integer, Integer> temp = new LinkedHashMap<Integer, Integer>();
+        for (Map.Entry<Integer, Integer> aa : list) 
+        {
+            temp.put(aa.getKey(), aa.getValue());
+        }
+        
+        return temp;
+    }
 	
 	public static void main (String args [])
 	{
@@ -81,31 +69,16 @@ public class countFrequencySort
 		}
 		
 		System.out.println(hashMap);
+		System.out.println ();
 		
-		int [] elements = new int [hashMap.size()];				
-		int [] values = new int [hashMap.size()];
+		Map<Integer, Integer> sortedHashMap = sortByValue(hashMap);
 		
-		i = 0;
-		for (Integer value : hashMap.values())
+		System.out.println ("Output after sorting the values is :");
+		for (Map.Entry<Integer, Integer> en : sortedHashMap.entrySet()) 
 		{
-				values [i] = value;
-				i++;
+            System.out.println(en.getKey());
 		}
 		
-		i = 0;
-		for (Integer key : hashMap.keySet())
-		{
-				elements [i] = key;
-				i++;
-		}
-		
-		quickSort (values, elements, 0, hashMap.size()-1);
-		
-		System.out.println ("Array after sorting it by value is:");
-		for(i=0; i<hashMap.size(); i++)
-		{
-			System.out.println (elements[i]);
-		}
 		scanner.close();
 	}
 }
