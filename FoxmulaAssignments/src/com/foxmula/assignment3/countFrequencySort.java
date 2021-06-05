@@ -4,7 +4,7 @@ import java.util.*;
 
 public class countFrequencySort 
 {
-	public static HashMap<Integer, Integer> sortByValue (HashMap<Integer, Integer> hm)
+	public static HashMap<Integer, Integer> sorting (HashMap<Integer, Integer> hm)
     {
        List<Map.Entry<Integer, Integer> > list = new LinkedList<Map.Entry<Integer, Integer> >(hm.entrySet());
  
@@ -71,7 +71,7 @@ public class countFrequencySort
 		System.out.println(hashMap);
 		System.out.println ();
 		
-		Map<Integer, Integer> sortedHashMap = sortByValue(hashMap);
+		Map<Integer, Integer> sortedHashMap = sorting(hashMap);
 		
 		System.out.println ("Output after sorting the values is :");
 		for (Map.Entry<Integer, Integer> en : sortedHashMap.entrySet()) 
